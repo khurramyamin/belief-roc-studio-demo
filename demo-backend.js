@@ -607,10 +607,23 @@
     return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
   }
 
+  // Mirrors providers._query_demo: perceived acuity comes from symptom
+  // keywords in the prompt when recognizable, else from the provided label.
+  const HIGH_MARKERS = ["crushing chest pain", "slurred speech", "worst headache",
+    "pink frothy", "purple rash", "cannot stand up straight", "black tarry",
+    "sharp chest pain", "shortness of breath"];
+  const LOW_MARKERS = ["runny nose", "itchy rash", "back ache", "red urine",
+    "tension-type headache", "ankle", "watery diarrhea", "heart flutters"];
+
   async function demoBelief(prompt, demoLabel) {
+    const lower = prompt.toLowerCase();
+    let acuity;
+    if (HIGH_MARKERS.some((k) => lower.includes(k))) acuity = 1;
+    else if (LOW_MARKERS.some((k) => lower.includes(k))) acuity = 0;
+    else acuity = demoLabel === 1 ? 1 : 0;
     const h = parseInt((await sha256hex(prompt)).slice(0, 8), 16);
     const noise = (h % 1000) / 1000;
-    const base = demoLabel === 1 ? 0.15 + 0.72 * noise : 0.02 + 0.55 * noise;
+    const base = acuity === 1 ? 0.35 + 0.55 * noise : 0.02 + 0.40 * noise;
     return Math.min(0.99, Math.max(0.01, Math.pow(base, 0.65)));
   }
 
@@ -635,7 +648,8 @@
       const context = buildContext(row, cfg.context_cols);
       if (raw === "" || context.trim() === "") return;
       if (cfg.limit && cases.length >= cfg.limit) return;
-      cases.push({ index: i, context, label: positive.has(raw) ? 1 : 0 });
+      cases.push({ index: i, context, label: positive.has(raw) ? 1 : 0,
+                   date: cfg.date_col ? (row[cfg.date_col] || "").trim() : "" });
     });
     if (!cases.length) throw new Error("No usable rows: every row needs patient information and an outcome value.");
 
@@ -647,7 +661,7 @@
         belief_question: cfg.belief_question, decision_question: cfg.decision_question,
       },
       results: cases.map((c) => ({
-        index: c.index, label: c.label, belief: null, error: null,
+        index: c.index, label: c.label, date: c.date, belief: null, error: null,
         context_preview: c.context.slice(0, 160),
       })),
     };
@@ -755,9 +769,9 @@
     const m = (a.getAttribute("href") || "").match(/^\/api\/job\/([^/]+)\/beliefs\.csv$/);
     const job = m && jobs.get(m[1]);
     if (!job) return;
-    const lines = ["row_number,belief,label,error"];
+    const lines = ["row_number,date,belief,label,error"];
     for (const r of job.results) {
-      lines.push(`${r.index + 1},${r.belief === null ? "" : r.belief.toFixed(4)},${r.label},`);
+      lines.push(`${r.index + 1},${r.date || ""},${r.belief === null ? "" : r.belief.toFixed(4)},${r.label},`);
     }
     const blob = new Blob([lines.join("\n") + "\n"], { type: "text/csv" });
     const tmp = document.createElement("a");

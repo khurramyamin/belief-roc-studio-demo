@@ -202,6 +202,11 @@ button:disabled, .as-btn.disabled { opacity: 0.45; cursor: default; pointer-even
 .legend .key { display: inline-flex; align-items: center; gap: 7px; }
 .legend .stroke { width: 18px; height: 0; border-top: 2.5px solid var(--series-1); display: inline-block; }
 .legend .stroke.dashed { border-top-style: dotted; border-top-color: var(--muted); }
+.legend .stroke.s2 { border-top-color: var(--series-2); }
+.legend .circ {
+  width: 9px; height: 9px; border-radius: 50%; display: inline-block;
+  background: var(--surface-1); border: 2px solid var(--series-1);
+}
 .legend .sq {
   width: 11px; height: 11px; background: var(--series-2); display: inline-block;
   border: 2px solid var(--surface-1); outline: 1px solid var(--border);
@@ -240,6 +245,30 @@ button:disabled, .as-btn.disabled { opacity: 0.45; cursor: default; pointer-even
   padding: 12px 14px; font-size: 13px; white-space: pre-wrap; word-break: break-word;
   max-height: 300px; overflow-y: auto;
 }
+
+.optional { font-weight: 400; color: var(--muted); font-size: 13px; }
+
+.monitor-controls {
+  display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin: 6px 0 4px;
+}
+.monitor-controls select { width: auto; padding: 6px 8px; margin-left: 6px; }
+.mini-roc-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
+  gap: 14px; margin-top: 8px;
+}
+.mini-roc {
+  border: 1px solid var(--border); border-radius: 10px; padding: 8px 8px 4px;
+  background: var(--page);
+}
+.mini-roc h4 {
+  margin: 0 0 2px; font-size: 13px; font-weight: 600; text-align: center;
+  color: var(--text-secondary);
+}
+.mini-roc .sub { text-align: center; font-size: 12px; color: var(--muted); margin: 0 0 2px; }
+.mini-roc svg { display: block; width: 100%; height: auto; }
+.monitor-charts { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 18px; }
+@media (max-width: 860px) { .monitor-charts { grid-template-columns: 1fr; } }
+.monitor-charts svg { display: block; width: 100%; height: auto; }
 
 .help-list li { margin-bottom: 10px; }
 .app-footer {

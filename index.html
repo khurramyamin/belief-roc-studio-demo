@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Belief ROC Studio — Demo</title>
+<title>ROC Studio</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="app-header">
   <div class="app-header-inner">
-    <h1>Belief ROC Studio</h1>
+    <h1>ROC Studio</h1>
     <p class="subtitle">Tune an AI's decisions to <em>your</em> hospital's priorities — no technical background needed.</p>
   </div>
 </header>
@@ -49,7 +49,8 @@
       <input type="file" id="file-input" accept=".csv,text/csv" hidden>
     </div>
     <p class="hint">No file handy? <button type="button" class="linklike" id="load-example">Try a
-      built-in example</button> — 48 made-up patients, analyzed in practice mode (no API key needed).</p>
+      built-in example</button> — 96 made-up patients spanning two years, analyzed in practice mode
+      (no API key needed).</p>
     <div class="notice" id="data-status" hidden></div>
 
     <div id="column-config" hidden>
@@ -72,6 +73,10 @@
             <p class="hint">e.g. tick <em>1</em>, <em>yes</em>, or <em>admit</em> — whichever marks the cases that truly needed action.</p>
             <div id="positive-values" class="check-list"></div>
           </div>
+          <h3>When did each case happen? <span class="optional">(optional)</span></h3>
+          <p class="hint">Pick the date column to unlock <strong>performance monitoring over time</strong> —
+            recommended, and increasingly expected by regulators.</p>
+          <select id="date-col"><option value="">— no date column —</option></select>
         </div>
       </div>
     </div>
@@ -198,6 +203,52 @@
       <button type="button" class="primary" id="goto-decide">Use this cut-off on new cases →</button>
     </div>
   </section>
+
+  <!-- STEP 6 — monitoring over time -->
+  <section class="card" id="step-monitor" hidden>
+    <h2><span class="step-num">6</span> Monitor performance over time</h2>
+    <p class="hint">AI performance can drift as patients, practice, and models change, so regulators —
+      including the FDA in its expectations for AI-enabled devices — look for ongoing monitoring, not a
+      one-time validation. This dashboard replays your reviewed cases period by period, as if you were
+      re-checking the tool on a schedule.</p>
+    <div class="monitor-controls">
+      <label><strong>Review cases every</strong>
+        <select id="monitor-window">
+          <option value="month">month</option>
+          <option value="quarter">quarter</option>
+          <option value="year">year</option>
+        </select>
+      </label>
+      <span class="hint tight" id="monitor-meta"></span>
+    </div>
+
+    <div class="viz-root">
+      <h3>Side by side: each period's ROC curve</h3>
+      <p class="hint">The orange square is <strong>your locked cut-off</strong> applied to that period's cases;
+        the hollow circle is the cut-off that would have been best for that period alone. When they drift
+        apart, the locked rule no longer serves your priorities.</p>
+      <div id="monitor-roc-grid" class="mini-roc-grid"></div>
+      <div class="legend" id="monitor-roc-legend"></div>
+    </div>
+
+    <div class="monitor-charts">
+      <div class="viz-root">
+        <h3>Ranking quality (AUROC) by period</h3>
+        <div id="monitor-auc-chart"></div>
+      </div>
+      <div class="viz-root">
+        <h3>Mistake rates at your locked cut-off</h3>
+        <div id="monitor-rates-chart"></div>
+        <div class="legend" id="monitor-rates-legend"></div>
+      </div>
+    </div>
+
+    <details class="fine">
+      <summary>View each period as a table</summary>
+      <div class="table-scroll"><table id="monitor-table"></table></div>
+    </details>
+    <div class="card inner" id="monitor-explain"></div>
+  </section>
 </main>
 
 <!-- DECIDE TAB -->
@@ -248,6 +299,11 @@
       <li><strong>New cases are decided with the same recipe.</strong> Ask the AI only for a probability,
         then apply your chosen cut-off. This keeps decisions consistent, auditable, and under the
         hospital's control.</li>
+      <li><strong>Performance is monitored, not assumed.</strong> If your file includes case dates, the
+        tool replays the review period by period — side-by-side ROC curves, AUROC over time, and mistake
+        rates at your locked cut-off — so drift is caught early and the cut-off can be re-estimated.
+        Ongoing monitoring of this kind is part of what regulators such as the FDA look for in
+        AI-enabled clinical tools.</li>
     </ol>
     <p class="hint">Method: Yamin&nbsp;et&nbsp;al., “Talk is not cheap: Eliciting beliefs and utilities is
       necessary for trustworthy medical AI decisions.” The analysis here is the same as the
@@ -258,7 +314,7 @@
   </section>
 </main>
 
-<footer class="app-footer">Belief ROC Studio · runs entirely on your computer · free &amp; open source</footer>
+<footer class="app-footer">ROC Studio · runs entirely on your computer · free &amp; open source</footer>
 
 <script src="demo-backend.js"></script>
 <script src="app.js"></script>

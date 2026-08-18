@@ -13,11 +13,14 @@ const state = {
   contextCols: [],
   outcomeCol: null,
   positiveValues: [],
+  dateCol: null,
   jobId: null,
   pollTimer: null,
-  results: null,      // [{index, label, belief, error, context_preview}]
+  results: null,      // [{index, label, date, belief, error, context_preview}]
   roc: null,          // {points, auc, P, N}
   bfu: null,
+  dates: [],
+  monitorWindowChosen: false,
   decideSetup: null,
 };
 
@@ -193,6 +196,16 @@ function renderColumnConfig() {
     updateRunReadiness();
   };
   $("positive-picker").hidden = true;
+
+  const dateSel = $("date-col");
+  dateSel.replaceChildren(
+    el("option", { value: "" }, "— no date column —"),
+    ...state.columns.map((c) => el("option", { value: c }, c)),
+  );
+  const dateGuess = state.columns.find((c) => /date|time|visit|admit/i.test(c));
+  dateSel.value = dateGuess || "";
+  state.dateCol = dateGuess || null;
+  dateSel.onchange = () => { state.dateCol = dateSel.value || null; };
 }
 
 async function loadOutcomeValues() {
@@ -235,6 +248,10 @@ async function loadExample() {
     state.outcomeCol = "needed_emergency_care";
     state.positiveValues = [];
     await loadOutcomeValues();
+    if (state.columns.includes("visit_date")) {
+      $("date-col").value = "visit_date";
+      state.dateCol = "visit_date";
+    }
     $("decision-question").value = "Should this patient be sent to emergency care now?";
     $("belief-question").value = "Based only on the information above, what is the probability that this patient genuinely needs emergency-level care now?";
     $("provider-select").value = "demo";
@@ -243,7 +260,8 @@ async function loadExample() {
     updateCostMeanings();
     updateRunReadiness();
     notice(status, "ok",
-      "Example loaded: 48 made-up patients, practice mode selected. Scroll down and press “Analyze all patients”.");
+      "Example loaded: 96 made-up patients across two years, practice mode selected. " +
+      "Scroll down and press “Analyze all patients”.");
   } catch (err) {
     notice(status, "err", `Could not load the example: ${err.message}`);
   }
@@ -372,6 +390,7 @@ async function startRun(limit) {
       positive_values: state.positiveValues,
       belief_question: $("belief-question").value.trim(),
       decision_question: $("decision-question").value.trim(),
+      date_col: state.dateCol,
       provider: currentProvider(), model: $("model-select").value,
       effort: $("effort-select").value, api_key: $("api-key").value,
       parallel: 4, limit: limit || null,
@@ -439,6 +458,8 @@ function renderResults(usable) {
   state.roc = roc;
   state.beliefs = beliefs;
   state.labels = labels;
+  state.dates = usable.map((r) => r.date || "");
+  state.monitorWindowChosen = false;
   $("step-results").hidden = false;
 
   // Stat tiles
@@ -490,6 +511,7 @@ function recomputeBfu() {
   renderExplainBox();
   updateChips();
   renderDecideTab();
+  renderMonitoring();
 }
 $("fn-cost").addEventListener("input", recomputeBfu);
 $("fp-cost").addEventListener("input", recomputeBfu);
@@ -705,6 +727,307 @@ function renderResultsTable() {
   );
 }
 
+/* ======================= Monitoring over time ======================= */
+
+const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+function parseCaseDate(s) {
+  if (!s) return null;
+  const m = String(s).trim().match(/^(\d{4})[-/](\d{1,2})(?:[-/](\d{1,2}))?/);
+  if (m) return new Date(Date.UTC(+m[1], +m[2] - 1, +(m[3] || 1)));
+  const t = Date.parse(s);
+  return Number.isNaN(t) ? null : new Date(t);
+}
+function periodKey(d, win) {
+  const y = d.getUTCFullYear(), m = d.getUTCMonth();
+  if (win === "month") return `${y}-${String(m + 1).padStart(2, "0")}`;
+  if (win === "quarter") return `${y}-Q${Math.floor(m / 3) + 1}`;
+  return String(y);
+}
+function periodLabel(d, win) {
+  const y = d.getUTCFullYear(), m = d.getUTCMonth();
+  if (win === "month") return `${MONTH_NAMES[m]} ${y}`;
+  if (win === "quarter") return `Q${Math.floor(m / 3) + 1} ${y}`;
+  return String(y);
+}
+
+$("monitor-window").addEventListener("change", () => renderMonitoring());
+
+function renderMonitoring() {
+  const sec = $("step-monitor");
+  if (!state.bfu || !state.dates.length) { sec.hidden = true; return; }
+  const parsed = state.dates.map(parseCaseDate);
+  const withDates = parsed.filter(Boolean).length;
+  if (withDates < 8) { sec.hidden = true; return; }
+
+  if (!state.monitorWindowChosen) {
+    const counts = {};
+    for (const win of ["month", "quarter", "year"]) {
+      counts[win] = new Set(parsed.filter(Boolean).map((d) => periodKey(d, win))).size;
+    }
+    $("monitor-window").value =
+      ["month", "quarter", "year"].find((w) => counts[w] >= 3 && counts[w] <= 14) ||
+      (counts.quarter >= 2 ? "quarter" : counts.month >= 2 ? "month" : "year");
+    state.monitorWindowChosen = true;
+  }
+  const win = $("monitor-window").value;
+
+  const groups = new Map();
+  parsed.forEach((d, i) => {
+    if (!d) return;
+    const key = periodKey(d, win);
+    if (!groups.has(key)) groups.set(key, { key, label: periodLabel(d, win), idxs: [] });
+    groups.get(key).idxs.push(i);
+  });
+  const periods = [...groups.values()].sort((a, b) => (a.key < b.key ? -1 : 1));
+  if (periods.length < 2) { sec.hidden = true; return; }
+  sec.hidden = false;
+
+  const skipped = state.dates.length - withDates;
+  $("monitor-meta").textContent =
+    `${periods.length} periods · ${withDates} dated cases` +
+    (skipped ? ` · ${skipped} cases without a readable date are left out here` : "");
+
+  const thr = state.bfu.threshold;
+  const stats = periods.map((p) => {
+    const bs = p.idxs.map((i) => state.beliefs[i]);
+    const ys = p.idxs.map((i) => state.labels[i]);
+    const P = ys.filter((y) => y === 1).length;
+    const N = ys.length - P;
+    let tp = 0, fp = 0, tn = 0, fn = 0;
+    for (let i = 0; i < ys.length; i++) {
+      const act = bs[i] >= thr;
+      if (act && ys[i] === 1) tp++;
+      else if (act) fp++;
+      else if (ys[i] === 1) fn++;
+      else tn++;
+    }
+    const roc = rocCurve(bs, ys);   // null when a period has only one class
+    return {
+      label: p.label, n: ys.length, P, N,
+      auc: roc ? roc.auc : null, points: roc ? roc.points : null,
+      tpr: P ? tp / P : null, fpr: N ? fp / N : null, fnr: P ? fn / P : null,
+      acc: (tp + tn) / ys.length,
+      best: roc ? bestFixedUtility(bs, ys, targetRatio()) : null,
+    };
+  });
+  state.monitorStats = stats;
+
+  renderMiniRocs(stats, thr);
+  renderAucChart(stats);
+  renderRatesChart(stats);
+  renderMonitorTable(stats, thr);
+  renderMonitorExplain(stats, thr);
+}
+
+/* ---- side-by-side mini ROC curves ---- */
+
+function renderMiniRocs(stats, thr) {
+  const grid = $("monitor-roc-grid");
+  grid.replaceChildren(...stats.map((s) => {
+    const cell = el("div", { class: "mini-roc" },
+      el("h4", {}, s.label),
+      el("p", { class: "sub" },
+        s.auc === null ? `${s.n} cases` : `${s.n} cases · AUROC ${s.auc.toFixed(2)}`));
+    if (!s.points) {
+      cell.append(el("p", { class: "sub" }, "only one outcome class — no curve"));
+      return cell;
+    }
+    const W = 150, PAD = 8;
+    const x = (fpr) => PAD + fpr * (W - 2 * PAD);
+    const y = (tpr) => W - PAD - tpr * (W - 2 * PAD);
+    const svg = svgEl("svg", { viewBox: `0 0 ${W} ${W}`, role: "img",
+      "aria-label": `ROC curve for ${s.label}` });
+    svg.append(
+      svgEl("rect", { x: PAD, y: PAD, width: W - 2 * PAD, height: W - 2 * PAD,
+        fill: "none", stroke: "var(--grid)", "stroke-width": 1 }),
+      svgEl("line", { x1: x(0), y1: y(0), x2: x(1), y2: y(1),
+        stroke: "var(--muted)", "stroke-width": 1, "stroke-dasharray": "2 4" }),
+      svgEl("path", {
+        d: s.points.map((p, i) => `${i ? "L" : "M"}${x(p.fpr).toFixed(1)},${y(p.tpr).toFixed(1)}`).join(""),
+        fill: "none", stroke: "var(--series-1)", "stroke-width": 2,
+        "stroke-linejoin": "round" }),
+    );
+    if (s.best && s.best.threshold > 0) {
+      const bestMark = svgEl("circle", { cx: x(s.best.fpr), cy: y(s.best.tpr), r: 5,
+        fill: "var(--surface-1)", stroke: "var(--series-1)", "stroke-width": 2 });
+      const t1 = svgEl("title");
+      t1.textContent = `${s.label}: best cut-off for this period alone = ${s.best.threshold.toFixed(2)}`;
+      bestMark.append(t1);
+      svg.append(bestMark);
+    }
+    const locked = svgEl("rect", { x: x(s.fpr ?? 0) - 5, y: y(s.tpr ?? 0) - 5,
+      width: 10, height: 10, rx: 2,
+      fill: "var(--series-2)", stroke: "var(--surface-1)", "stroke-width": 2 });
+    const t2 = svgEl("title");
+    t2.textContent = `${s.label} at your locked cut-off ${thr.toFixed(2)}: ` +
+      `caught ${pct(s.tpr ?? 0)} of true cases, false alarms ${pct(s.fpr ?? 0)}`;
+    locked.append(t2);
+    svg.append(locked);
+    cell.append(svg);
+    return cell;
+  }));
+
+  $("monitor-roc-legend").replaceChildren(
+    el("span", { class: "key" }, el("span", { class: "stroke" }), "That period's ROC curve"),
+    el("span", { class: "key" }, el("span", { class: "sq" }), "Your locked cut-off applied to that period"),
+    el("span", { class: "key" }, el("span", { class: "circ" }), "Best cut-off for that period alone"),
+  );
+}
+
+/* ---- generic dot/line time-series chart ---- */
+
+function timeSeriesSvg({ labels, series, yMin, yMax, yFmt, refLine }) {
+  const W = 470, H = 300, L = 56, R = 14, T = 14, B = 62;
+  const n = labels.length;
+  const x = (i) => (n === 1 ? (L + W - R) / 2 : L + (i / (n - 1)) * (W - L - R));
+  const y = (v) => H - B - ((v - yMin) / (yMax - yMin)) * (H - T - B);
+  const svg = svgEl("svg", { viewBox: `0 0 ${W} ${H}`, role: "img" });
+
+  for (let g = 0; g <= 4; g++) {
+    const v = yMin + (g / 4) * (yMax - yMin);
+    svg.append(svgEl("line", { x1: L, y1: y(v), x2: W - R, y2: y(v),
+      stroke: "var(--grid)", "stroke-width": 1 }));
+    const lbl = svgEl("text", { x: L - 8, y: y(v) + 4, "text-anchor": "end",
+      fill: "var(--muted)", "font-size": 11.5 });
+    lbl.textContent = yFmt(v);
+    svg.append(lbl);
+  }
+  if (refLine) {
+    svg.append(svgEl("line", { x1: L, y1: y(refLine.value), x2: W - R, y2: y(refLine.value),
+      stroke: "var(--muted)", "stroke-width": 1.4, "stroke-dasharray": "2 5" }));
+    const lbl = svgEl("text", { x: W - R, y: y(refLine.value) - 5, "text-anchor": "end",
+      fill: "var(--muted)", "font-size": 11 });
+    lbl.textContent = refLine.label;
+    svg.append(lbl);
+  }
+  const step = Math.max(1, Math.ceil(n / 10));
+  labels.forEach((label, i) => {
+    if (i % step && i !== n - 1) return;
+    const lbl = svgEl("text", { x: x(i), y: H - B + 18, "text-anchor": "end",
+      fill: "var(--muted)", "font-size": 11,
+      transform: `rotate(-35 ${x(i)} ${H - B + 18})` });
+    lbl.textContent = label;
+    svg.append(lbl);
+  });
+
+  for (const s of series) {
+    let d = "", pen = false;
+    s.values.forEach((v, i) => {
+      if (v === null) { pen = false; return; }
+      d += `${pen ? "L" : "M"}${x(i).toFixed(1)},${y(v).toFixed(1)}`;
+      pen = true;
+    });
+    if (d) svg.append(svgEl("path", { d, fill: "none", stroke: s.color, "stroke-width": 2 }));
+    s.values.forEach((v, i) => {
+      if (v === null) return;
+      const dot = svgEl("circle", { cx: x(i), cy: y(v), r: 4.5, fill: s.color,
+        stroke: "var(--surface-1)", "stroke-width": 1.6 });
+      const t = svgEl("title");
+      t.textContent = `${labels[i]} — ${s.name}: ${yFmt(v)}`;
+      dot.append(t);
+      svg.append(dot);
+    });
+    const lastIdx = s.values.map((v, i) => (v === null ? -1 : i)).reduce((a, b) => Math.max(a, b), -1);
+    if (lastIdx >= 0 && series.length > 1) {
+      const yPos = y(s.values[lastIdx]);
+      const lbl = svgEl("text", { x: W - R, y: yPos < T + 20 ? yPos + 18 : yPos - 10,
+        "text-anchor": "end", fill: "var(--text-secondary)", "font-size": 11.5 });
+      lbl.textContent = s.shortName || s.name;
+      svg.append(lbl);
+    }
+  }
+  return svg;
+}
+
+function renderAucChart(stats) {
+  const values = stats.map((s) => s.auc);
+  const present = values.filter((v) => v !== null);
+  const yMin = Math.max(0, Math.min(0.5, ...present) - 0.05);
+  $("monitor-auc-chart").replaceChildren(timeSeriesSvg({
+    labels: stats.map((s) => s.label),
+    series: [{ name: "AUROC (ranking quality)", color: "var(--series-1)", values }],
+    yMin, yMax: 1,
+    yFmt: (v) => v.toFixed(2),
+    refLine: { value: 0.5, label: "no better than chance" },
+  }));
+}
+
+function renderRatesChart(stats) {
+  const fprs = stats.map((s) => s.fpr);
+  const fnrs = stats.map((s) => s.fnr);
+  const maxRate = Math.max(0.3, ...fprs.filter((v) => v !== null),
+    ...fnrs.filter((v) => v !== null));
+  $("monitor-rates-chart").replaceChildren(timeSeriesSvg({
+    labels: stats.map((s) => s.label),
+    series: [
+      { name: "False alarms (unnecessary actions, of true “no” cases)",
+        shortName: "False alarms", color: "var(--series-1)", values: fprs },
+      { name: "Missed cases (of true “yes” cases)",
+        shortName: "Missed", color: "var(--series-2)", values: fnrs },
+    ],
+    yMin: 0, yMax: Math.min(1, maxRate + 0.08),
+    yFmt: (v) => pct(v),
+  }));
+  $("monitor-rates-legend").replaceChildren(
+    el("span", { class: "key" }, el("span", { class: "stroke" }), "False alarm rate"),
+    el("span", { class: "key" }, el("span", { class: "stroke s2" }), "Missed-case rate"),
+  );
+}
+
+function renderMonitorTable(stats, thr) {
+  const fmt = (v, f) => (v === null ? "—" : f(v));
+  $("monitor-table").replaceChildren(
+    el("tr", {},
+      el("th", {}, "Period"), el("th", { class: "num" }, "Cases"),
+      el("th", { class: "num" }, "True “yes”"), el("th", { class: "num" }, "AUROC"),
+      el("th", { class: "num" }, `Caught @ ${thr.toFixed(2)}`),
+      el("th", { class: "num" }, "False alarms"), el("th", { class: "num" }, "Missed"),
+      el("th", { class: "num" }, "Accuracy"),
+      el("th", { class: "num" }, "Best cut-off (this period)")),
+    ...stats.map((s) => el("tr", {},
+      el("td", {}, s.label),
+      el("td", { class: "num" }, String(s.n)),
+      el("td", { class: "num" }, String(s.P)),
+      el("td", { class: "num" }, fmt(s.auc, (v) => v.toFixed(2))),
+      el("td", { class: "num" }, fmt(s.tpr, pct)),
+      el("td", { class: "num" }, fmt(s.fpr, pct)),
+      el("td", { class: "num" }, fmt(s.fnr, pct)),
+      el("td", { class: "num" }, pct(s.acc)),
+      el("td", { class: "num" }, s.best ? s.best.threshold.toFixed(2) : "—"))),
+  );
+}
+
+function renderMonitorExplain(stats, thr) {
+  const first = stats.find((s) => s.auc !== null);
+  const last = [...stats].reverse().find((s) => s.auc !== null);
+  const box = $("monitor-explain");
+  if (!first || !last || first === last) { box.replaceChildren(); return; }
+  const aucDrop = first.auc - last.auc;
+  const fnrRise = (last.fnr ?? 0) - (first.fnr ?? 0);
+  const drifted = aucDrop > 0.05 || fnrRise > 0.10;
+  box.replaceChildren(
+    el("h3", {}, "What the monitoring shows"),
+    el("p", {},
+      `Your locked rule — act when the AI's probability is at least ${thr.toFixed(2)} — is replayed on each ` +
+      `period's cases. From ${first.label} to ${last.label}, ranking quality (AUROC) went from ` +
+      `${first.auc.toFixed(2)} to ${last.auc.toFixed(2)}` +
+      (first.fnr !== null && last.fnr !== null
+        ? `, and the missed-case rate at your cut-off went from ${pct(first.fnr)} to ${pct(last.fnr)}.`
+        : "."),
+    ),
+    el("p", {}, drifted
+      ? el("strong", {}, "⚠ Performance appears to be drifting. Re-run this review on recent cases and " +
+          "re-estimate the cut-off before continuing to rely on the current rule.")
+      : "No strong drift is visible at this review interval — keep monitoring on a regular schedule."),
+    el("p", { class: "hint" },
+      "Per-period counts are small, so read trends rather than single points. This kind of scheduled, " +
+      "documented monitoring — with a plan for when to re-estimate the cut-off — is what regulators such " +
+      "as the FDA expect for AI-enabled clinical decision tools."),
+  );
+}
+
 /* ------------------------- downloads ------------------------- */
 
 $("download-summary").addEventListener("click", () => {
@@ -723,6 +1046,15 @@ $("download-summary").addEventListener("click", () => {
       threshold: b.threshold, utility_ratio_fn_fp: b.utilityRatio,
       tpr: b.tpr, fpr: b.fpr, accuracy: b.accuracy,
       tp: b.tp, fp: b.fp, tn: b.tn, fn: b.fn,
+    },
+    monitoring: !state.monitorStats ? null : {
+      review_window: $("monitor-window").value,
+      periods: state.monitorStats.map((s) => ({
+        period: s.label, n: s.n, n_positive: s.P, auroc: s.auc,
+        tpr_at_locked_threshold: s.tpr, fpr_at_locked_threshold: s.fpr,
+        fnr_at_locked_threshold: s.fnr, accuracy_at_locked_threshold: s.acc,
+        best_threshold_this_period: s.best ? s.best.threshold : null,
+      })),
     },
   };
   const blob = new Blob([JSON.stringify(summary, null, 2)], { type: "application/json" });
