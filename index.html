@@ -217,10 +217,11 @@
       <div class="notice" id="decide-status" hidden></div>
       <div id="decide-result" hidden></div>
       <details class="fine">
-        <summary>Prefer to use the AI yourself? Copy a ready-made prompt</summary>
-        <p class="hint">This prompt tells any capable AI to apply your chosen cut-off directly —
-          paste your patient description above it.</p>
+        <summary>Prefer to use the AI yourself? Copy the probability question</summary>
+        <p class="hint">Ask the AI <em>only</em> this — never for a decision. Paste your patient
+          description in place of the first line, send it, and read off the probability.</p>
         <pre id="deploy-prompt" class="prompt-preview"></pre>
+        <p class="hint" id="deploy-rule"></p>
         <button type="button" class="secondary" id="copy-deploy">Copy the prompt</button>
       </details>
     </div>

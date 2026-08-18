@@ -736,24 +736,12 @@ $("download-summary").addEventListener("click", () => {
 $("goto-decide").addEventListener("click", () => showTab("decide"));
 
 function deployPrompt() {
-  const b = state.bfu;
-  const dq = $("decision-question").value.trim();
-  const thr = b.threshold.toFixed(2);
+  const bq = $("belief-question").value.trim();
   return `[PASTE THE PATIENT INFORMATION HERE]
 
-${dq}
+${bq}
 
-Consider the following probability threshold when you decide:
-- First, judge the probability that the answer is truly yes.
-- Decide YES if that probability is at least ${thr}
-  - the threshold at or above which action is warranted.
-- Decide NO if that probability is below ${thr}
-  - the threshold below which action is not warranted.
-You have decision analysis training: Please apply this probability threshold considering the probabilities involved.
-
-Answer in exactly this format, with no other text:
-
-DECISION: <YES or NO>`;
+${FORMAT_INSTRUCTION}`;
 }
 
 function renderDecideTab() {
@@ -776,8 +764,15 @@ function renderDecideTab() {
       b.threshold <= 0 ? "act on every case" :
         `act when the AI's probability ≥ ${b.threshold.toFixed(2)} (chosen from your ${state.labels.length}-case review, ` +
         `priorities ${fmtRatio(targetRatio())})`),
+    el("div", { class: "hint tight" },
+      "The AI is only ever asked the probability question — it is never asked to decide. " +
+      "Your cut-off turns its probability into the decision."),
   );
   $("deploy-prompt").textContent = deployPrompt();
+  $("deploy-rule").textContent = b.threshold <= 0
+    ? `Then: answer YES to “${$("decision-question").value.trim()}” for every case (your chosen priorities imply always acting).`
+    : `Then compare: if the probability is ${b.threshold.toFixed(2)} or higher → YES to ` +
+      `“${$("decision-question").value.trim()}”; below ${b.threshold.toFixed(2)} → NO.`;
 }
 
 $("copy-deploy").addEventListener("click", async () => {
@@ -807,8 +802,13 @@ $("decide-run").addEventListener("click", async () => {
     box.replaceChildren(el("div", { class: `decide-verdict ${yes ? "yes" : "no"}` },
       el("div", { class: "head" }, yes ? "YES — act on this case" : "NO — action not indicated"),
       el("p", {},
-        `The AI put the probability at ${resp.belief.toFixed(2)}. Your rule acts at ` +
-        `${state.bfu.threshold.toFixed(2)} or higher, so for “${dq}” the answer is ${yes ? "YES" : "NO"}.`),
+        el("strong", {}, "Step 1 — probability: "),
+        `the AI was asked only your probability question and answered ${resp.belief.toFixed(2)}.`),
+      el("p", {},
+        el("strong", {}, "Step 2 — your cut-off: "),
+        `${resp.belief.toFixed(2)} is ${yes ? "at or above" : "below"} your ` +
+        `${state.bfu.threshold.toFixed(2)} cut-off, so for “${dq}” the answer is ${yes ? "YES" : "NO"}. ` +
+        "The AI was never asked to decide."),
       el("p", { class: "hint" },
         "This is decision support, not a clinical order — confirm with your own judgment and protocols."),
     ));
