@@ -1,129 +1,321 @@
 visit_date,patient_description,needed_emergency_care
-2024-07-30,"A 32-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
-2024-09-23,"A 83-year-old man. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
-2024-09-10,A 63-year-old woman. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
-2024-07-02,"A 50-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
-2024-07-13,"A 75-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
-2024-09-16,"A 74-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
-2024-08-30,A 46-year-old man. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
-2024-07-04,"A 48-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
-2024-07-04,"A 42-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
-2024-08-08,"A 48-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
-2024-07-16,"A 31-year-old woman. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
-2024-07-26,"A 78-year-old woman. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
-2024-08-16,A 23-year-old woman. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
-2024-09-09,"A 27-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
-2024-07-04,"A 75-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
-2024-08-15,"A 84-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
-2024-11-25,"A 21-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
-2024-12-07,"A 54-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
-2024-11-26,A 31-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
-2024-12-03,"A 45-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
-2024-10-22,A 81-year-old man. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
-2024-12-12,"A 42-year-old man. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
-2024-12-17,"A 71-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
-2024-12-25,"A 70-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
-2024-12-22,"A 60-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
-2024-11-24,"A 76-year-old man. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
-2024-10-24,A 21-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
-2024-11-26,"A 84-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
-2024-11-18,"A 54-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
-2024-12-07,"A 65-year-old woman. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
-2024-11-30,"A 49-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
-2024-11-27,"A 45-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",yes
-2025-02-05,A 65-year-old woman. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,no
-2025-03-21,"A 58-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
-2025-02-13,A 49-year-old man. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
-2025-03-15,"A 43-year-old woman. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",yes
-2025-03-13,"A 29-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
-2025-01-10,"A 72-year-old man. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
-2025-03-29,A 41-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
-2025-02-09,"A 34-year-old man. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
-2025-02-14,A 67-year-old woman. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
-2025-01-10,"A 56-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
-2025-01-24,"A 67-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
-2025-01-04,"A 37-year-old man. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
-2025-01-29,"A 25-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
-2025-01-01,"A 25-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
-2025-01-01,"A 51-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
-2025-02-28,"A 75-year-old man. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
-2025-04-26,"A 39-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
-2025-06-19,"A 64-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
-2025-05-07,"A 68-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
-2025-04-04,"A 68-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
-2025-04-15,"A 45-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",no
-2025-04-16,"A 55-year-old man. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
-2025-05-29,A 57-year-old woman. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
-2025-06-04,"A 31-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
-2025-05-21,"A 42-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
-2025-05-22,"A 70-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
-2025-05-17,"A 66-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
-2025-06-28,"A 78-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",yes
-2025-04-21,"A 36-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
-2025-05-12,"A 28-year-old man. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
-2025-05-23,"A 62-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
-2025-05-23,"A 19-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
-2025-09-02,"A 23-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",no
-2025-07-24,"A 75-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
-2025-08-13,"A 23-year-old woman. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
-2025-07-16,"A 61-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
-2025-08-22,"A 35-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
-2025-09-11,"A 87-year-old man. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",yes
-2025-08-23,A 77-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
-2025-08-14,"A 45-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
-2025-07-12,"A 75-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
-2025-08-31,"A 63-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
-2025-07-12,"A 79-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
-2025-07-02,"A 86-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
-2025-09-19,A 32-year-old man. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,no
-2025-07-17,"A 81-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
-2025-07-01,"A 26-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
-2025-09-10,"A 38-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
-2025-12-09,"A 44-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
-2025-10-03,"A 37-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",yes
-2025-12-25,A 74-year-old man. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
-2025-11-30,"A 45-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
-2025-10-24,"A 71-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
-2025-12-18,"A 19-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",yes
-2025-10-15,"A 25-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
-2025-10-07,"A 57-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
-2025-11-28,"A 20-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",no
-2025-12-05,"A 24-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
-2025-12-06,"A 65-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
-2025-10-23,"A 70-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",yes
-2025-12-26,"A 72-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
-2025-12-15,"A 39-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
-2025-11-21,"A 45-year-old man. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
-2025-10-07,"A 64-year-old man. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
-2026-02-19,"A 56-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
-2026-02-22,"A 65-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
-2026-03-04,"A 63-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",no
-2026-03-01,"A 80-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
-2026-01-25,"A 33-year-old woman. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
-2026-03-16,"A 85-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
-2026-03-14,"A 47-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",no
-2026-01-03,"A 48-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",yes
-2026-01-28,"A 71-year-old man. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
-2026-02-25,"A 26-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",yes
-2026-02-10,"A 28-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",no
-2026-01-16,"A 88-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
-2026-01-27,"A 48-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
-2026-02-11,"A 36-year-old woman. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
-2026-01-03,"A 28-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
-2026-02-17,"A 56-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
-2026-05-07,"A 58-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",no
-2026-05-13,"A 56-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
-2026-04-29,"A 36-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",no
-2026-04-20,"A 45-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
-2026-04-30,"A 57-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
-2026-06-02,"A 74-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",yes
-2026-05-29,"A 57-year-old woman. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
-2026-04-06,"A 57-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
-2026-04-16,"A 62-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
-2026-05-16,"A 68-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
-2026-04-26,"A 55-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",no
-2026-05-01,"A 31-year-old woman. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",yes
-2026-04-02,"A 88-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
-2026-04-01,"A 28-year-old man. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
-2026-04-18,"A 68-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
-2026-04-10,"A 45-year-old man. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2024-07-28,"A 76-year-old woman. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2024-09-18,"A 82-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2024-09-18,"A 54-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2024-08-26,"A 20-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2024-08-25,"A 31-year-old woman. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2024-09-17,"A 78-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2024-07-30,A 79-year-old woman. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2024-07-24,"A 22-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2024-07-30,A 22-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2024-09-14,"A 57-year-old woman. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2024-08-30,"A 48-year-old woman. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2024-08-18,"A 47-year-old woman. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2024-07-09,"A 21-year-old man. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2024-08-26,"A 51-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2024-09-04,A 22-year-old woman. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2024-09-18,"A 64-year-old man. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2024-08-25,"A 21-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2024-09-06,"A 54-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2024-08-26,A 31-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2024-09-02,"A 45-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2024-07-22,A 81-year-old man. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,no
+2024-09-11,"A 42-year-old man. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2024-09-16,"A 71-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2024-09-24,"A 70-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2024-09-21,"A 60-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2024-08-24,"A 76-year-old man. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2024-07-24,A 21-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2024-08-26,"A 84-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2024-08-18,"A 54-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2024-09-06,"A 65-year-old woman. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2024-08-30,"A 49-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2024-08-27,"A 45-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2024-08-16,"A 22-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2024-08-09,"A 54-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2024-08-16,"A 82-year-old woman. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2024-08-01,"A 80-year-old woman. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2024-09-10,"A 29-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2024-07-10,"A 72-year-old man. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2024-09-26,A 41-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2024-08-09,"A 34-year-old man. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2024-11-20,A 27-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2024-10-10,"A 83-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2024-10-24,"A 67-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2024-10-04,"A 37-year-old man. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2024-10-29,"A 25-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2024-10-01,"A 25-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2024-10-01,"A 51-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2024-11-28,"A 75-year-old man. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2024-10-09,"A 53-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2024-11-15,"A 88-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2024-12-09,"A 40-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2024-11-19,"A 55-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2024-10-27,A 22-year-old woman. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2024-11-06,"A 33-year-old woman. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2024-11-08,"A 34-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2024-10-13,"A 77-year-old man. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2024-10-24,A 83-year-old woman. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2024-12-23,"A 69-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2024-10-21,A 41-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2024-12-12,"A 79-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2024-12-28,"A 78-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2024-10-21,"A 36-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2024-11-11,"A 28-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2024-11-22,"A 62-year-old woman. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2024-11-22,"A 19-year-old woman. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2024-11-02,"A 24-year-old man. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2024-12-04,"A 63-year-old man. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",no
+2024-10-24,"A 75-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2024-11-13,"A 23-year-old woman. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2024-10-16,"A 61-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2024-11-22,"A 35-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2024-12-12,"A 87-year-old man. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2024-11-23,A 77-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2024-11-14,"A 45-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2024-10-12,"A 75-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2024-12-01,"A 63-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2024-10-12,"A 79-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2024-10-02,"A 86-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2024-12-20,A 32-year-old man. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2024-10-17,"A 81-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-02-23,"A 72-year-old woman. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2025-02-15,"A 28-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-03-11,"A 44-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2025-01-03,"A 37-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-03-27,A 74-year-old man. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2025-03-02,"A 45-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2025-01-24,"A 71-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2025-03-20,"A 19-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2025-01-15,"A 25-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-01-07,"A 57-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2025-02-28,"A 20-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2025-03-07,"A 24-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-03-08,"A 65-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2025-01-23,"A 70-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2025-03-28,"A 72-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2025-03-17,"A 39-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-02-21,"A 45-year-old man. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2025-01-07,"A 64-year-old man. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-02-20,"A 75-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2025-02-19,"A 56-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-02-22,"A 65-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-03-04,"A 63-year-old man. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-03-01,A 80-year-old woman. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,no
+2025-01-25,"A 33-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-03-16,"A 85-year-old woman. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2025-03-14,"A 47-year-old man. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-01-03,"A 48-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2025-01-28,"A 71-year-old man. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2025-02-25,"A 26-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2025-02-10,"A 28-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2025-01-16,"A 88-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-01-27,"A 48-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-02-11,A 36-year-old woman. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2025-01-03,"A 28-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-02-17,"A 56-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2025-03-26,"A 63-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-02-06,"A 58-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2025-02-12,"A 56-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-01-29,"A 36-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2025-01-20,"A 45-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-04-14,"A 51-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-06-14,"A 58-year-old man. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2025-05-29,"A 57-year-old woman. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2025-04-06,"A 57-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-04-16,"A 62-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",no
+2025-05-16,"A 68-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2025-04-26,"A 55-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-05-01,"A 31-year-old woman. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2025-04-02,"A 88-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-04-01,"A 28-year-old man. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2025-04-18,"A 68-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-04-10,"A 45-year-old man. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2025-05-19,"A 20-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2025-05-27,"A 78-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-06-04,"A 21-year-old man. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2025-05-30,"A 80-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2025-05-27,"A 71-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-04-15,"A 45-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2025-06-08,"A 60-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-06-08,"A 88-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2025-06-21,A 36-year-old man. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2025-04-16,"A 71-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-05-09,"A 31-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2025-04-26,"A 47-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-04-10,"A 51-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2025-05-16,"A 31-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-06-07,"A 56-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2025-05-12,"A 74-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2025-05-07,"A 19-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-04-01,"A 74-year-old man. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2025-06-21,A 38-year-old man. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2025-05-08,"A 52-year-old man. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-06-07,"A 77-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2025-04-23,"A 65-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-04-03,A 31-year-old woman. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2025-04-21,"A 87-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2025-04-14,"A 42-year-old man. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2025-06-11,"A 30-year-old man. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-06-15,"A 50-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2025-04-29,"A 73-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2025-08-13,"A 64-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2025-07-28,"A 37-year-old man. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2025-08-06,"A 73-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2025-09-27,"A 82-year-old man. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-07-27,A 81-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2025-07-13,"A 44-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2025-09-13,"A 28-year-old man. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2025-07-28,"A 65-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-07-09,"A 60-year-old woman. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2025-07-11,"A 31-year-old man. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2025-08-15,A 56-year-old woman. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2025-09-01,"A 29-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-09-01,"A 78-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-08-25,"A 34-year-old man. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2025-07-16,"A 65-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",no
+2025-08-09,"A 83-year-old man. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2025-07-03,"A 42-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2025-07-09,"A 63-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-07-04,"A 54-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2025-07-23,"A 67-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-07-15,"A 68-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2025-08-14,"A 84-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2025-08-21,"A 27-year-old man. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2025-09-04,"A 28-year-old woman. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2025-09-13,"A 32-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2025-08-07,"A 27-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-07-10,"A 38-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2025-09-13,"A 27-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2025-09-16,"A 23-year-old woman. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2025-09-17,"A 83-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2025-07-30,"A 58-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2025-08-03,"A 62-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-08-11,"A 44-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2025-08-30,"A 33-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2025-09-25,"A 31-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-07-02,"A 73-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2025-07-20,"A 24-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2025-07-27,"A 55-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2025-07-02,"A 39-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-09-12,"A 29-year-old woman. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2025-12-21,"A 38-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-10-20,"A 22-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-11-16,"A 54-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-12-28,"A 71-year-old woman. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2025-11-30,"A 32-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2025-10-05,"A 63-year-old man. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2025-10-12,"A 51-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2025-10-25,"A 44-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2025-12-26,"A 42-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",no
+2025-10-19,"A 51-year-old man. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2025-11-11,A 61-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2025-10-04,"A 46-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-10-31,"A 32-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-10-01,"A 46-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2025-10-17,"A 88-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2025-12-08,"A 61-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2025-10-19,"A 35-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2025-12-25,"A 62-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-11-21,A 38-year-old woman. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2025-10-21,"A 19-year-old man. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-12-05,"A 66-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2025-12-17,"A 51-year-old man. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2025-10-29,"A 82-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2025-12-19,"A 65-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-12-12,"A 83-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2025-12-20,"A 67-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-12-24,A 82-year-old woman. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2025-10-24,"A 30-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2025-12-20,"A 53-year-old woman. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2025-10-24,"A 43-year-old man. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2025-12-01,"A 24-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2025-11-04,"A 27-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2025-10-24,"A 75-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2025-10-26,"A 51-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-11-17,"A 56-year-old man. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2025-11-21,"A 71-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-12-07,A 56-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2025-10-13,"A 84-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2025-10-09,"A 38-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2025-10-19,"A 65-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2026-01-28,A 86-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2026-01-22,"A 84-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2026-01-17,A 25-year-old man. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2026-01-01,"A 67-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2026-02-06,"A 85-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2026-02-09,"A 64-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2026-02-06,A 42-year-old man. Symptoms: black tarry stools for two days and now feeling faint when standing. Relevant history: takes ibuprofen daily for back pain.,yes
+2026-01-06,"A 62-year-old man. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2026-02-13,A 38-year-old woman. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2026-03-23,"A 26-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2026-02-08,"A 54-year-old woman. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2026-02-03,"A 49-year-old woman. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2026-01-20,"A 27-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2026-02-14,"A 79-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2026-03-07,A 30-year-old man. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2026-02-25,"A 51-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2026-02-09,"A 32-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2026-02-26,"A 46-year-old woman. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2026-03-21,"A 81-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2026-03-09,"A 79-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2026-03-05,"A 64-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2026-01-29,"A 21-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2026-01-16,"A 51-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2026-02-11,"A 86-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2026-03-26,"A 58-year-old woman. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2026-03-18,"A 77-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2026-01-05,"A 26-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2026-01-08,"A 48-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2026-02-22,"A 71-year-old woman. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",no
+2026-03-03,"A 69-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2026-01-07,"A 56-year-old woman. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2026-01-20,"A 68-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2026-02-01,"A 50-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2026-01-29,"A 53-year-old man. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2026-01-18,"A 48-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2026-01-25,"A 46-year-old man. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2026-01-22,"A 39-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2026-01-19,"A 57-year-old woman. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2026-03-03,"A 38-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2026-01-09,"A 73-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2026-05-29,"A 37-year-old woman. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2026-05-23,"A 82-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2026-05-17,"A 22-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2026-04-01,"A 33-year-old woman. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2026-04-17,A 42-year-old woman. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2026-05-20,"A 86-year-old woman. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2026-04-05,"A 36-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2026-06-19,"A 33-year-old woman. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2026-06-19,"A 74-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2026-05-13,"A 67-year-old man. Symptoms: tension-type headache at the end of workdays for the past week, relieved by paracetamol. Relevant history: none.",no
+2026-04-06,"A 31-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2026-05-01,"A 24-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2026-06-12,"A 25-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",no
+2026-06-13,"A 61-year-old man. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2026-04-28,"A 57-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2026-05-11,"A 26-year-old man. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2026-04-18,"A 51-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2026-06-12,"A 32-year-old man. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no
+2026-06-11,"A 87-year-old man. Symptoms: fever of 39.5 C, confusion, and a rapidly spreading purple rash on the legs. Relevant history: none.",yes
+2026-04-28,"A 28-year-old woman. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2026-06-11,"A 53-year-old man. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2026-06-09,"A 82-year-old woman. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2026-04-14,"A 29-year-old man. Symptoms: severe abdominal pain moving to the right lower side, vomiting, cannot stand up straight. Relevant history: none.",yes
+2026-05-04,"A 20-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2026-05-31,"A 25-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2026-06-28,"A 51-year-old woman. Symptoms: runny nose, sneezing, and a mild sore throat for two days, no fever. Relevant history: none.",no
+2026-05-24,"A 57-year-old woman. Symptoms: sudden weakness of the right arm and slurred speech starting one hour ago. Relevant history: atrial fibrillation, not on anticoagulation.",yes
+2026-05-14,"A 68-year-old woman. Symptoms: two days of watery diarrhea, drinking fluids well, no blood, no fever. Relevant history: recent restaurant meal.",no
+2026-05-30,A 65-year-old woman. Symptoms: sudden severe shortness of breath and sharp chest pain after a long-haul flight. Relevant history: on oral contraceptives.,yes
+2026-06-12,"A 64-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2026-05-02,"A 32-year-old man. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2026-05-17,"A 30-year-old woman. Symptoms: mild lower back ache after lifting boxes at the weekend, improving with rest. Relevant history: none.",no
+2026-05-07,"A 70-year-old woman. Symptoms: worst headache of my life, started abruptly 30 minutes ago, now with neck stiffness. Relevant history: none.",yes
+2026-04-29,"A 80-year-old woman. Symptoms: occasional heart flutters lasting a few seconds when stressed, none today. Relevant history: anxiety.",no
+2026-04-06,"A 31-year-old woman. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2026-05-27,"A 36-year-old man. Symptoms: itchy rash on both forearms after gardening yesterday, otherwise well. Relevant history: seasonal allergies.",no
+2026-05-17,"A 21-year-old woman. Symptoms: crushing chest pain radiating to the left arm for 40 minutes, sweating and nauseated. Relevant history: hypertension, high cholesterol.",yes
+2026-04-16,"A 19-year-old woman. Symptoms: single episode of painless red urine this morning, urine now clear, feeling fine. Relevant history: ex-smoker (20 pack-years).",no
+2026-06-21,"A 39-year-old man. Symptoms: shortness of breath at rest and coughing pink frothy sputum since last night. Relevant history: heart failure, missed diuretics for three days.",yes
+2026-06-04,"A 36-year-old woman. Symptoms: mild ankle swelling and soreness after twisting it on the stairs, can bear weight. Relevant history: none.",no

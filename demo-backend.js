@@ -615,16 +615,32 @@
   const LOW_MARKERS = ["runny nose", "itchy rash", "back ache", "red urine",
     "tension-type headache", "ankle", "watery diarrhea", "heart flutters"];
 
-  async function demoBelief(prompt, demoLabel) {
+  // The simulated model "goes stale" after mid-2025 (mirrors providers.py):
+  // for later visit dates its beliefs blend toward pure noise, creating
+  // gradual, realistic drift in the monitoring dashboard.
+  function demoDrift(demoDate) {
+    if (!demoDate) return 0;
+    const m = String(demoDate).trim().match(/^(\d{4})[-/](\d{1,2})(?:[-/](\d{1,2}))?/);
+    if (!m) return 0;
+    const d = Date.UTC(+m[1], +m[2] - 1, +(m[3] || 1));
+    const days = (d - Date.UTC(2025, 6, 1)) / 86400000;
+    return 0.45 * Math.min(Math.max(days / 365, 0), 1);
+  }
+
+  async function demoBelief(prompt, demoLabel, demoDate) {
     const lower = prompt.toLowerCase();
     let acuity;
     if (HIGH_MARKERS.some((k) => lower.includes(k))) acuity = 1;
     else if (LOW_MARKERS.some((k) => lower.includes(k))) acuity = 0;
     else acuity = demoLabel === 1 ? 1 : 0;
-    const h = parseInt((await sha256hex(prompt)).slice(0, 8), 16);
-    const noise = (h % 1000) / 1000;
-    const base = acuity === 1 ? 0.35 + 0.55 * noise : 0.02 + 0.40 * noise;
-    return Math.min(0.99, Math.max(0.01, Math.pow(base, 0.65)));
+    const digest = await sha256hex(prompt);
+    const noise = (parseInt(digest.slice(0, 8), 16) % 1000) / 1000;
+    const noise2 = (parseInt(digest.slice(8, 16), 16) % 1000) / 1000;
+    const base = acuity === 1 ? 0.40 + 0.52 * noise : 0.01 + 0.28 * noise;
+    let belief = Math.pow(base, 0.8);
+    const w = demoDrift(demoDate);
+    belief = (1 - w) * belief + w * noise2;
+    return Math.min(0.99, Math.max(0.01, belief));
   }
 
   const buildPrompt = (context, question) =>
@@ -671,7 +687,7 @@
       for (let pos = 0; pos < cases.length; pos++) {
         if (job.cancel) break;
         const prompt = buildPrompt(cases[pos].context, cfg.belief_question);
-        job.results[pos].belief = await demoBelief(prompt, cases[pos].label);
+        job.results[pos].belief = await demoBelief(prompt, cases[pos].label, cases[pos].date);
         job.done++;
         if (pos % 3 === 2) await new Promise((r) => setTimeout(r, 30)); // visible progress
       }
@@ -747,7 +763,7 @@
       if (body.provider !== "demo") return err(WEB_DEMO_MSG, 502);
       const prompt = buildPrompt(body.context, body.belief_question);
       const h = parseInt((await sha256hex(body.context)).slice(0, 8), 16);
-      const belief = await demoBelief(prompt, h % 2);
+      const belief = await demoBelief(prompt, h % 2, null);
       return json({ belief, threshold: body.threshold,
                     decision: belief >= Number(body.threshold), raw: `PROBABILITY: ${belief.toFixed(2)}` });
     }

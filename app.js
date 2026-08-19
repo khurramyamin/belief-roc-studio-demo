@@ -1,4 +1,4 @@
-/* Belief ROC Studio — frontend logic.
+/* ROC Studio — frontend logic.
    Analysis functions mirror generic_RoC/generic_roc.py exactly. */
 "use strict";
 
@@ -260,7 +260,7 @@ async function loadExample() {
     updateCostMeanings();
     updateRunReadiness();
     notice(status, "ok",
-      "Example loaded: 96 made-up patients across two years, practice mode selected. " +
+      "Example loaded: 320 made-up patients across two years, practice mode selected. " +
       "Scroll down and press “Analyze all patients”.");
   } catch (err) {
     notice(status, "err", `Could not load the example: ${err.message}`);
