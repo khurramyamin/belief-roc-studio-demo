@@ -1022,9 +1022,7 @@ function renderMonitorExplain(stats, thr) {
           "re-estimate the cut-off before continuing to rely on the current rule.")
       : "No strong drift is visible at this review interval — keep monitoring on a regular schedule."),
     el("p", { class: "hint" },
-      "Per-period counts are small, so read trends rather than single points. This kind of scheduled, " +
-      "documented monitoring — with a plan for when to re-estimate the cut-off — is what regulators such " +
-      "as the FDA expect for AI-enabled clinical decision tools."),
+      "Per-period counts are small, so read trends rather than single points."),
   );
 }
 
