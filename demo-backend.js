@@ -714,7 +714,7 @@
     const jobMatch = url.match(/^\/api\/job\/([^/]+)(\/cancel)?$/);
 
     if (url === "/api/providers") return json(REGISTRY);
-    if (url === "/api/sample_dataset") return fetch("sample_patients.csv");
+    if (url === "/api/sample_dataset") return fetch(`sample_patients.csv?v=${Date.now()}`);
     if (url === "/api/dataset") {
       try {
         const parsed = parseCsv(body.csv_text);
