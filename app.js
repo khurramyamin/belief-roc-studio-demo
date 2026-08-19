@@ -184,7 +184,7 @@ function renderColumnConfig() {
 
   const sel = $("outcome-col");
   sel.replaceChildren(
-    el("option", { value: "" }, "— choose a column —"),
+    el("option", { value: "" }, "(choose a column)"),
     ...state.columns.map((c) => el("option", { value: c }, c)),
   );
   sel.value = "";
@@ -199,7 +199,7 @@ function renderColumnConfig() {
 
   const dateSel = $("date-col");
   dateSel.replaceChildren(
-    el("option", { value: "" }, "— no date column —"),
+    el("option", { value: "" }, "(no date column)"),
     ...state.columns.map((c) => el("option", { value: c }, c)),
   );
   const dateGuess = state.columns.find((c) => /date|time|visit|admit/i.test(c));
@@ -227,7 +227,7 @@ async function loadOutcomeValues() {
   $("positive-picker").hidden = false;
   if (resp.n_distinct > 10) {
     box.prepend(el("div", { class: "hint" },
-      "This column has many different values — are you sure it is the outcome column?"));
+      "This column has many different values. Are you sure it is the outcome column?"));
   }
   updateRunReadiness();
 }
@@ -321,7 +321,7 @@ function renderModels() {
   const p = state.registry[currentProvider()];
   const sel = $("model-select");
   sel.replaceChildren(...p.models.map((m) =>
-    el("option", { value: m.id }, m.note ? `${m.label} — ${m.note}` : m.label)));
+    el("option", { value: m.id }, m.note ? `${m.label} (${m.note})` : m.label)));
   sel.onchange = () => { renderEfforts(); persistPrefs(); };
   $("key-hint").textContent = p.key_hint;
   const isDemo = currentProvider() === "demo";
@@ -437,7 +437,7 @@ function finishRun(job) {
   state.results = job.results || [];
   const usable = state.results.filter((r) => r.belief !== null);
   if (job.status === "cancelled") notice(status, "err", "Stopped. Partial results are shown below if enough cases finished.");
-  else if (job.failed) notice(status, "busy", `Done, but ${job.failed} of ${job.total} cases failed — their errors are listed in the results table.`);
+  else if (job.failed) notice(status, "busy", `Done, but ${job.failed} of ${job.total} cases failed. Their errors are listed in the results table.`);
   else notice(status, "ok", "Done! Scroll down for the results.");
   if (usable.length >= 4) renderResults(usable);
   else notice(status, "err", "Too few cases produced a usable probability to build a curve (need at least 4).");
@@ -452,7 +452,7 @@ function renderResults(usable) {
   const status = $("run-status");
   if (!roc) {
     notice(status, "err",
-      "The outcome column has only one class in the analyzed rows (all yes or all no) — a curve needs both. Check the value you ticked in step 1.");
+      "The outcome column has only one class in the analyzed rows (all yes or all no), but a curve needs both. Check the value you ticked in step 1.");
     return;
   }
   state.roc = roc;
@@ -468,7 +468,7 @@ function renderResults(usable) {
     statTile(roc.auc.toFixed(2), "Ranking quality (AUROC)", aucVerdict(roc.auc)),
     statTile(String(usable.length), "Patients analyzed",
       `${roc.P} with the outcome · ${roc.N} without`),
-    statTile(String(failures), "Cases skipped", failures ? "see the table below" : "none — all cases answered"),
+    statTile(String(failures), "Cases skipped", failures ? "see the table below" : "none; all cases answered"),
   );
 
   recomputeBfu();
@@ -492,8 +492,8 @@ function statTile(val, lbl, sub) {
 function aucVerdict(auc) {
   if (auc >= 0.9) return "excellent separation of the two groups";
   if (auc >= 0.8) return "good separation of the two groups";
-  if (auc >= 0.7) return "fair separation — interpret with care";
-  return "weak separation — this AI may not be reliable here";
+  if (auc >= 0.7) return "fair separation; interpret with care";
+  return "weak separation; this AI may not be reliable here";
 }
 
 function targetRatio() {
@@ -542,7 +542,7 @@ function renderBfuReadout() {
           `Act when the AI's probability ≥ ${b.threshold.toFixed(2)}`),
       el("div", { class: "hint tight" },
         isFinite(b.utilityRatio)
-          ? `Equivalent prompt weighting — missed case : unnecessary action = ${fmtRatio(b.utilityRatio)}`
+          ? `Equivalent prompt weighting (missed case : unnecessary action) = ${fmtRatio(b.utilityRatio)}`
           : "Equivalent prompt weighting: always act"),
     ),
     el("div", { class: "bfu-stats" },
@@ -571,7 +571,7 @@ function renderExplainBox() {
     ? `one missed case is ${fmtRatio(r)} times as costly as one unnecessary action`
     : `one unnecessary action is ${fmtRatio(1 / r)} times as costly as one missed case`;
   const calNote = isFinite(b.utilityRatio) && Math.abs(Math.log(b.utilityRatio / r)) > Math.log(1.5)
-    ? ` Note: this differs from your stated ${fmtRatio(r)} priority — that is expected, and it means the AI's raw probabilities are systematically too high or too low (mis-calibrated). The cut-off found here corrects for that automatically, which is exactly why it is chosen from your own data rather than assumed.`
+    ? ` Note: this differs from your stated ${fmtRatio(r)} priority. That is expected, and it means the AI's raw probabilities are systematically too high or too low (mis-calibrated). The cut-off found here corrects for that automatically, which is exactly why it is chosen from your own data rather than assumed.`
     : "";
   $("explain-box").replaceChildren(
     el("h3", {}, "What this means, in plain language"),
@@ -582,7 +582,7 @@ function renderExplainBox() {
         `answer “yes” to “${dq}” whenever the AI's probability is at least ${b.threshold.toFixed(2)}.`)),
     el("p", {},
       isFinite(b.utilityRatio)
-        ? `If you prefer to instruct the AI with costs instead of a cut-off, tell it a missed case costs ${fmtRatio(b.utilityRatio)} as much as an unnecessary action — that weighting implies the same cut-off.${calNote}`
+        ? `If you prefer to instruct the AI with costs instead of a cut-off, tell it a missed case costs ${fmtRatio(b.utilityRatio)} as much as an unnecessary action; that weighting implies the same cut-off.${calNote}`
         : `The best rule on this data is to act on every case.${calNote}`),
   );
 }
@@ -721,7 +721,7 @@ function renderResultsTable() {
     ...state.results.map((r) => el("tr", {},
       el("td", { class: "num" }, String(r.index + 1)),
       el("td", { title: r.context_preview }, r.context_preview),
-      el("td", { class: "num" }, r.belief === null ? "—" : r.belief.toFixed(2)),
+      el("td", { class: "num" }, r.belief === null ? "n/a" : r.belief.toFixed(2)),
       el("td", {}, r.label === 1 ? "yes" : "no"),
       el("td", {}, r.error || ""))),
   );
@@ -831,7 +831,7 @@ function renderMiniRocs(stats, thr) {
       el("p", { class: "sub" },
         s.auc === null ? `${s.n} cases` : `${s.n} cases · AUROC ${s.auc.toFixed(2)}`));
     if (!s.points) {
-      cell.append(el("p", { class: "sub" }, "only one outcome class — no curve"));
+      cell.append(el("p", { class: "sub" }, "only one outcome class, no curve"));
       return cell;
     }
     const W = 150, PAD = 8;
@@ -925,7 +925,7 @@ function timeSeriesSvg({ labels, series, yMin, yMax, yFmt, refLine }) {
       const dot = svgEl("circle", { cx: x(i), cy: y(v), r: 4.5, fill: s.color,
         stroke: "var(--surface-1)", "stroke-width": 1.6 });
       const t = svgEl("title");
-      t.textContent = `${labels[i]} — ${s.name}: ${yFmt(v)}`;
+      t.textContent = `${labels[i]}, ${s.name}: ${yFmt(v)}`;
       dot.append(t);
       svg.append(dot);
     });
@@ -977,7 +977,7 @@ function renderRatesChart(stats) {
 }
 
 function renderMonitorTable(stats, thr) {
-  const fmt = (v, f) => (v === null ? "—" : f(v));
+  const fmt = (v, f) => (v === null ? "n/a" : f(v));
   $("monitor-table").replaceChildren(
     el("tr", {},
       el("th", {}, "Period"), el("th", { class: "num" }, "Cases"),
@@ -995,7 +995,7 @@ function renderMonitorTable(stats, thr) {
       el("td", { class: "num" }, fmt(s.fpr, pct)),
       el("td", { class: "num" }, fmt(s.fnr, pct)),
       el("td", { class: "num" }, pct(s.acc)),
-      el("td", { class: "num" }, s.best ? s.best.threshold.toFixed(2) : "—"))),
+      el("td", { class: "num" }, s.best ? s.best.threshold.toFixed(2) : "n/a"))),
   );
 }
 
@@ -1010,7 +1010,7 @@ function renderMonitorExplain(stats, thr) {
   box.replaceChildren(
     el("h3", {}, "What the monitoring shows"),
     el("p", {},
-      `Your locked rule — act when the AI's probability is at least ${thr.toFixed(2)} — is replayed on each ` +
+      `Your locked rule (act when the AI's probability is at least ${thr.toFixed(2)}) is replayed on each ` +
       `period's cases. From ${first.label} to ${last.label}, ranking quality (AUROC) went from ` +
       `${first.auc.toFixed(2)} to ${last.auc.toFixed(2)}` +
       (first.fnr !== null && last.fnr !== null
@@ -1020,7 +1020,7 @@ function renderMonitorExplain(stats, thr) {
     el("p", {}, drifted
       ? el("strong", {}, "⚠ Performance appears to be drifting. Re-run this review on recent cases and " +
           "re-estimate the cut-off before continuing to rely on the current rule.")
-      : "No strong drift is visible at this review interval — keep monitoring on a regular schedule."),
+      : "No strong drift is visible at this review interval; keep monitoring on a regular schedule."),
     el("p", { class: "hint" },
       "Per-period counts are small, so read trends rather than single points."),
   );
@@ -1080,7 +1080,7 @@ function renderDecideTab() {
   const noticeBox = $("decide-setup-notice");
   if (!ready) {
     notice(noticeBox, "busy",
-      "First run an analysis in tab 1 — the cut-off found there is what this tab applies to new cases.");
+      "First run an analysis in tab 1; the cut-off found there is what this tab applies to new cases.");
     return;
   }
   noticeBox.hidden = true;
@@ -1095,7 +1095,7 @@ function renderDecideTab() {
         `act when the AI's probability ≥ ${b.threshold.toFixed(2)} (chosen from your ${state.labels.length}-case review, ` +
         `priorities ${fmtRatio(targetRatio())})`),
     el("div", { class: "hint tight" },
-      "The AI is only ever asked the probability question — it is never asked to decide. " +
+      "The AI is only ever asked the probability question; it is never asked to decide. " +
       "Your cut-off turns its probability into the decision."),
   );
   $("deploy-prompt").textContent = deployPrompt();
@@ -1130,17 +1130,17 @@ $("decide-run").addEventListener("click", async () => {
     const box = $("decide-result");
     box.hidden = false;
     box.replaceChildren(el("div", { class: `decide-verdict ${yes ? "yes" : "no"}` },
-      el("div", { class: "head" }, yes ? "YES — act on this case" : "NO — action not indicated"),
+      el("div", { class: "head" }, yes ? "YES: act on this case" : "NO: action not indicated"),
       el("p", {},
-        el("strong", {}, "Step 1 — probability: "),
+        el("strong", {}, "Step 1 (probability): "),
         `the AI was asked only your probability question and answered ${resp.belief.toFixed(2)}.`),
       el("p", {},
-        el("strong", {}, "Step 2 — your cut-off: "),
+        el("strong", {}, "Step 2 (your cut-off): "),
         `${resp.belief.toFixed(2)} is ${yes ? "at or above" : "below"} your ` +
         `${state.bfu.threshold.toFixed(2)} cut-off, so for “${dq}” the answer is ${yes ? "YES" : "NO"}. ` +
         "The AI was never asked to decide."),
       el("p", { class: "hint" },
-        "This is decision support, not a clinical order — confirm with your own judgment and protocols."),
+        "This is decision support, not a clinical order; confirm with your own judgment and protocols."),
     ));
   } catch (err) {
     notice(status, "err", err.message);

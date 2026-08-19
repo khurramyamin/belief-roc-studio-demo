@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ROC Studio — Demo</title>
+<title>ROC Studio Demo</title>
 <link rel="stylesheet" href="style.css?v=5a3eb3bb">
 </head>
 <body>
 <header class="app-header">
   <div class="app-header-inner">
     <h1>ROC Studio</h1>
-    <p class="subtitle">Tune an AI's decisions to <em>your</em> hospital's priorities — no technical background needed.</p>
+    <p class="subtitle">Tune an AI's decisions to <em>your</em> hospital's priorities. No technical background needed.</p>
   </div>
 </header>
 
 
 <div class="demo-banner">
   <strong>Live demo.</strong> Everything here runs in your browser with a
-  <em>simulated</em> AI (practice mode) — no data leaves this page. To run real
+  <em>simulated</em> AI (practice mode). No data leaves this page. To run real
   analyses with ChatGPT, Claude, or Gemini on your own data, use the free
   downloadable tool this page demonstrates.
 </div>
@@ -43,14 +43,14 @@
     <h2><span class="step-num">1</span> Load your patient file</h2>
     <p class="hint">A spreadsheet saved as a <strong>CSV file</strong>, one row per past patient. It needs
       (a)&nbsp;a column (or columns) describing the patient, and (b)&nbsp;a column with what
-      <strong>actually happened</strong> — the gold-standard outcome. Optionally provide a
+      <strong>actually happened</strong> (the gold-standard outcome). Optionally provide a
       date column for time-based monitoring and analysis.</p>
     <div class="dropzone" id="dropzone" tabindex="0">
       <strong>Click to choose a CSV file</strong> or drag it here
       <input type="file" id="file-input" accept=".csv,text/csv" hidden>
     </div>
     <p class="hint">No file handy? <button type="button" class="linklike" id="load-example">Try a
-      built-in example</button> — 320 made-up patients spanning two years, analyzed in practice mode
+      built-in example</button>: 320 made-up patients spanning two years, analyzed in practice mode
       (no API key needed).</p>
     <div class="notice" id="data-status" hidden></div>
 
@@ -67,17 +67,17 @@
         </div>
         <div>
           <h3>Which column holds the true outcome?</h3>
-          <p class="hint">The gold standard — what really happened or what the correct action was.</p>
+          <p class="hint">The gold standard: what really happened or what the correct action was.</p>
           <select id="outcome-col"></select>
           <div id="positive-picker" hidden>
             <h3>Which value means “yes, the outcome happened”?</h3>
-            <p class="hint">e.g. tick <em>1</em>, <em>yes</em>, or <em>admit</em> — whichever marks the cases that truly needed action.</p>
+            <p class="hint">e.g. tick <em>1</em>, <em>yes</em>, or <em>admit</em>, whichever marks the cases that truly needed action.</p>
             <div id="positive-values" class="check-list"></div>
           </div>
           <h3>When did each case happen? <span class="optional">(optional)</span></h3>
-          <p class="hint">Pick the date column to unlock <strong>performance monitoring over time</strong> —
-            recommended, and increasingly expected by regulators.</p>
-          <select id="date-col"><option value="">— no date column —</option></select>
+          <p class="hint">Pick the date column to unlock <strong>performance monitoring over time</strong>.
+            Recommended, and increasingly expected by regulators.</p>
+          <select id="date-col"><option value="">(no date column)</option></select>
         </div>
       </div>
     </div>
@@ -95,7 +95,7 @@
       </div>
       <div>
         <label for="belief-question"><strong>The probability question</strong> (asked to the AI)</label>
-        <p class="hint">Ask for the <em>chance</em> that the outcome is truly present — not for a decision.</p>
+        <p class="hint">Ask for the <em>chance</em> that the outcome is truly present, not for a decision.</p>
         <textarea id="belief-question" rows="3"
           placeholder="Example: Based only on the information above, what is the probability that this patient genuinely needs emergency-level care now?"></textarea>
       </div>
@@ -146,7 +146,7 @@
     <h2><span class="step-num">4</span> Run the analysis</h2>
     <p class="hint" id="run-summary">Complete steps 1–3 first.</p>
     <div class="btn-row">
-      <button type="button" class="secondary" id="run-test" disabled>Quick test — first 10 patients</button>
+      <button type="button" class="secondary" id="run-test" disabled>Quick test: first 10 patients</button>
       <button type="button" class="primary" id="run-all" disabled>Analyze all patients</button>
       <button type="button" class="danger" id="run-cancel" hidden>Stop</button>
     </div>
@@ -209,7 +209,7 @@
   <section class="card" id="step-monitor" hidden>
     <h2><span class="step-num">6</span> Monitor performance over time</h2>
     <p class="hint">AI performance can drift as patients, practice, and models change, so ongoing
-      monitoring matters — not just a one-time validation. This dashboard replays your reviewed cases
+      monitoring matters, not just a one-time validation. This dashboard replays your reviewed cases
       period by period, as if you were re-checking the tool on a schedule.</p>
     <div class="monitor-controls">
       <label><strong>Review cases every</strong>
@@ -259,7 +259,7 @@
     <div id="decide-ready" hidden>
       <div class="decide-summary" id="decide-summary"></div>
       <label for="decide-context"><strong>Describe the new patient</strong>
-        <span class="hint">— same kind of information as the columns in your file.</span></label>
+        <span class="hint">(same kind of information as the columns in your file)</span></label>
       <textarea id="decide-context" rows="8"
         placeholder="Example:&#10;Age: 58&#10;Sex: male&#10;Symptoms: single episode of painless red urine this morning; urine now clear; feeling fine.&#10;History: ex-smoker (20 pack-years)."></textarea>
       <div class="btn-row">
@@ -269,7 +269,7 @@
       <div id="decide-result" hidden></div>
       <details class="fine">
         <summary>Prefer to use the AI yourself? Copy the probability question</summary>
-        <p class="hint">Ask the AI <em>only</em> this — never for a decision. Paste your patient
+        <p class="hint">Ask the AI <em>only</em> this, never for a decision. Paste your patient
           description in place of the first line, send it, and read off the probability.</p>
         <pre id="deploy-prompt" class="prompt-preview"></pre>
         <p class="hint" id="deploy-rule"></p>
@@ -294,19 +294,19 @@
       <li><strong>You choose the trade-off, not the AI.</strong> You state how bad a missed case is
         compared with an unnecessary action (for example “missing a real emergency is 10× worse than one
         unnecessary referral”). The tool then finds the cut-off on the curve that best serves that
-        priority — even if the AI's probabilities are systematically too high or too low, because the
+        priority, even if the AI's probabilities are systematically too high or too low, because the
         cut-off is chosen from <em>your own data</em>.</li>
       <li><strong>New cases are decided with the same recipe.</strong> Ask the AI only for a probability,
         then apply your chosen cut-off. This keeps decisions consistent, auditable, and under the
         hospital's control.</li>
       <li><strong>Performance is monitored, not assumed.</strong> If your file includes case dates, the
-        tool replays the review period by period — side-by-side ROC curves, AUROC over time, and mistake
-        rates at your locked cut-off — so drift is caught early and the cut-off can be re-estimated.</li>
+        tool replays the review period by period (side-by-side ROC curves, AUROC over time, and mistake
+        rates at your locked cut-off) so drift is caught early and the cut-off can be re-estimated.</li>
     </ol>
     <p class="hint">Method: Yamin&nbsp;et&nbsp;al., “Talk is not cheap: Eliciting beliefs and utilities is
       necessary for trustworthy medical AI decisions.” The analysis here is the same as the
       open-source <code>generic_RoC</code> tool in that repository.</p>
-    <p class="hint"><strong>Important:</strong> this tool supports — it does not replace — clinical
+    <p class="hint"><strong>Important:</strong> this tool supports, but does not replace, clinical
       judgment. Validate on your own data, re-check periodically, and follow your institution's
       governance process before using AI-assisted decisions in care.</p>
   </section>
@@ -314,7 +314,7 @@
 
 <footer class="app-footer">ROC Studio · runs entirely on your computer · free &amp; open source</footer>
 
-<script src="demo-backend.js?v=3cf4d535"></script>
-<script src="app.js?v=5a74a312"></script>
+<script src="demo-backend.js?v=ae9f69c8"></script>
+<script src="app.js?v=24125ce2"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
   "providers": {
     "openai": {
       "label": "ChatGPT (OpenAI)",
-      "key_hint": "Starts with \u201csk-\u2026\u201d \u2014 from platform.openai.com \u2192 API keys",
+      "key_hint": "Starts with \u201csk-\u2026\u201d (from platform.openai.com \u2192 API keys)",
       "models": [
         {
           "id": "gpt-5.6-sol",
@@ -217,7 +217,7 @@
     },
     "anthropic": {
       "label": "Claude (Anthropic)",
-      "key_hint": "Starts with \u201csk-ant-\u2026\u201d \u2014 from console.anthropic.com \u2192 API keys",
+      "key_hint": "Starts with \u201csk-ant-\u2026\u201d (from console.anthropic.com \u2192 API keys)",
       "models": [
         {
           "id": "claude-fable-5",
@@ -533,12 +533,12 @@
     },
     "demo": {
       "label": "Practice mode (no API key needed)",
-      "key_hint": "No key needed \u2014 generates simulated answers so you can try the tool",
+      "key_hint": "No key needed. Generates simulated answers so you can try the tool",
       "models": [
         {
           "id": "demo-model",
           "label": "Simulated AI (for practice only)",
-          "note": "not a real AI \u2014 do not use for real analysis",
+          "note": "not a real AI; do not use for real analysis",
           "efforts": [
             {
               "id": "n/a",
@@ -554,7 +554,7 @@
 
   const WEB_DEMO_MSG =
     "This web page is a demo and cannot contact real AI providers. " +
-    "Choose “Practice mode” here to see the full workflow with a simulated AI — " +
+    "Choose “Practice mode” here to see the full workflow with a simulated AI, " +
     "or use the free downloadable tool to run ChatGPT, Claude, or Gemini on your own data.";
 
   const FORMAT_INSTRUCTION =
